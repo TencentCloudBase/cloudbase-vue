@@ -1,0 +1,35 @@
+{
+  "name": "@cloudbase/vue-provider",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/starkwang/cloudbase-vue.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/starkwang/cloudbase-vue/issues"
+  },
+  "homepage": "https://github.com/starkwang/cloudbase-vue#readme",
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "less-loader": "^5.0.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "vue-loader": "^15.7.2",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "vue": "^2.6.10"
+  }
+}

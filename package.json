@@ -30,6 +30,7 @@
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
+    "tcb-js-sdk": "^1.3.3-alpha.1",
     "vue": "^2.6.10"
   }
 }

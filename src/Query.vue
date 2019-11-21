@@ -1,12 +1,15 @@
 <template>
-    <div class="example">{{ msg }}</div>
+    <div>
+        <slot v-bind="{ msg, text }"></slot>
+    </div>
 </template>
 
 <script>
 export default {
     data() {
         return {
-            msg: "Hello world!"
+            msg: "Hello world",
+            text: '123'
         }
     }
 }

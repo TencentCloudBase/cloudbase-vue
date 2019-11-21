@@ -1,32 +1,57 @@
 <template>
-  <div id="app">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <query></query>
-  </div>
+    <div id="app">
+        <cb-login-state v-slot="{ loginState }">
+            <h1>{{ loginState ? '已登录' : '没登录' }}</h1>
+            <cb-database-watch
+                v-if="loginState"
+                v-slot="{ docs }"
+                collection="messages"
+            >{{ docs.length }}</cb-database-watch>
+        </cb-login-state>
+        <cb-cloud-file
+            id="cloud://starkwang-e850e3.7374-starkwang-e850e3-1257776809/file-cloud-path"
+            v-slot="{ url, loading }"
+        >{{ url ? url : 'loading...' }}</cb-cloud-file>
+        <cb-mutation :mutation="addMessage" v-slot="{ mutate }">
+            <button @click="mutate()">mutate</button>
+        </cb-mutation>
+    </div>
 </template>
 
 <script>
-import Vue from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
-import Cloudbase from '@cloudbase/vue-provider'
+import Vue from "vue"
+import axios from "axios"
+import Cloudbase from "@cloudbase/vue-provider"
 
-Vue.use(Cloudbase)
+Vue.use(Cloudbase, {
+    env: "starkwang-e850e3"
+})
 
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
+    name: "app",
+    data() {
+        return {
+            documents: []
+        }
+    },
+    methods: {
+        addMessage: db =>
+            db.collection("messages").add({
+                timestamp: new Date().getTime(),
+                text: "send from vue",
+                uid: "1234567890"
+            })
+    },
+    created() {
+        const init = async () => {
+            const {
+                data: { ticket }
+            } = await axios.get(
+                "http://service-m1w79cyz-1257776809.ap-shanghai.apigateway.myqcloud.com/release/"
+            )
+            this.$cloudbase.auth({ persistence: "local" }).signInWithTicket(ticket)
+        }
+        init()
+    }
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

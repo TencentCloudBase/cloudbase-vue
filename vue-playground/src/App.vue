@@ -1,20 +1,20 @@
 <template>
     <div id="app">
-        <cb-login-state v-slot="{ loginState }">
+        <LoginState v-slot="{ loginState }">
             <h1>{{ loginState ? '已登录' : '没登录' }}</h1>
-            <cb-database-watch
+            <DatabaseWatch
                 v-if="loginState"
                 v-slot="{ docs }"
                 collection="messages"
-            >{{ docs.length }}</cb-database-watch>
-        </cb-login-state>
-        <cb-cloud-file
-            id="cloud://starkwang-e850e3.7374-starkwang-e850e3-1257776809/file-cloud-path"
-            v-slot="{ url, loading }"
-        >{{ url ? url : 'loading...' }}</cb-cloud-file>
-        <cb-mutation :mutation="addMessage" v-slot="{ mutate }">
-            <button @click="mutate()">mutate</button>
-        </cb-mutation>
+            >{{ docs.length }}</DatabaseWatch>
+            <CloudFile
+                id="cloud://starkwang-e850e3.7374-starkwang-e850e3-1257776809/file-cloud-path"
+                v-slot="{ url, loading }"
+            >{{ url ? url : 'loading...' }}</CloudFile>
+            <DatabaseMutation :mutation="addMessage" v-slot="{ mutate }">
+                <button @click="mutate()">mutate</button>
+            </DatabaseMutation>
+        </LoginState>
     </div>
 </template>
 

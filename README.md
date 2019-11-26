@@ -4,7 +4,7 @@ Cloudbase Plugin for Vue
 
 -------
 
-### Install
+## Install
 
 ```
 npm install --save @cloudbase/vue-provider
@@ -12,7 +12,7 @@ npm install --save @cloudbase/vue-provider
 
 ------
 
-### Usage
+## Usage
 
 ```html
 <template>
@@ -43,9 +43,9 @@ export default {
 ```
 --------
 
-### Plugin API
+## Plugin API
 
-#### Vue.$cloudbase
+### Vue.$cloudbase
 
 可以在 Vue 组件的 `this.$cloudbase` 中，获取 Cloudbase 实例
 ```js
@@ -66,7 +66,7 @@ export default {
 ```
 --------
 
-### Components
+## Components
 
 - [x] [LoginState](#loginstate)
 - [ ] DatabaseQuery
@@ -76,21 +76,21 @@ export default {
 - [x] [CloudFile](#cloudfile)
 - [ ] UploadCloudFile
 
-#### LoginState
+### LoginState
 获取登录状态
 
-##### Props
+#### Props
 
 暂无
 
-##### Slots
+#### Slots
 
 | slot       | type                   | 描述         |
 | ---------- | ---------------------- | ------------ |
 | loginState | `null` or `LoginState` | 当前是否登录 |
 | loading    | `boolean`              | 是否加载中   |
 
-##### Example
+#### Example
 ```html
 <LoginState v-slot="{ loginState, loading }">
   <p>{{ loading ? '加载中' : (loginState ? '已登录' : '没登录') }}</p>
@@ -99,24 +99,24 @@ export default {
 
 -------
 
-#### DatabaseWatch
+### DatabaseWatch
 
 数据库实时监听
 
-##### Props
+#### Props
 
 | slot       | type     | 描述   |
 | ---------- | -------- | ------ |
 | collection | `string` | 集合名 |
 
-##### Slot
+#### Slot
 | slot    | type              | 描述           |
 | ------- | ----------------- | -------------- |
 | docs    | `Array<doc>`      | 文档组成的数组 |
 | loading | `boolean`         | 是否加载中     |
 | error   | `null` or `Error` | 错误           |
 
-##### Example
+#### Example
 ```html
 <DatabaseWatch
   v-slot="{ docs, loading, error }"
@@ -131,24 +131,24 @@ export default {
 ------
 
 
-#### CloudFile
+### CloudFile
 
 根据 `FileID`，获取云存储文件的真实 URL
 
-##### Props
+#### Props
 
 | slot | type     | 描述                          |
 | ---- | -------- | ----------------------------- |
 | id   | `string` | 云存储 ID，形如 `cloud://...` |
 
-##### Slot
+#### Slot
 | slot    | type              | 描述           |
 | ------- | ----------------- | -------------- |
 | url     | `string`          | 文件的真实 URL |
 | loading | `boolean`         | 是否加载中     |
 | error   | `null` or `Error` | 错误           |
 
-##### Example
+#### Example
 
 ```html
 <CloudFile

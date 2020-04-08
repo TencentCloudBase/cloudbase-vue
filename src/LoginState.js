@@ -12,6 +12,9 @@ export default {
     const loginState = await this.$cloudbase.auth().getLoginState()
     this.loginState = loginState || null
     this.loading = false
+    this.$cloudbase.auth().onLoginStateChanged((loginState) => {
+      this.loginState = loginState || null
+    })
   },
   render(h) {
     let result = this.$scopedSlots.default({

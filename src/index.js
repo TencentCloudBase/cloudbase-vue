@@ -2,7 +2,8 @@
 import LoginState from './LoginState'
 import DatabaseWatch from './DatabaseWatch'
 import CloudFile from './CloudFile'
-import DatabaseMutation from './DatabaseMutation'
+import DatabaseQuery from './DatabaseQuery'
+// import UploadCloudFile from './UploadCloudFile'
 import tcb from 'tcb-js-sdk'
 
 const plugin = {
@@ -11,7 +12,8 @@ const plugin = {
     Vue.component("LoginState", LoginState)
     Vue.component("DatabaseWatch", DatabaseWatch)
     Vue.component("CloudFile", CloudFile)
-    Vue.component("DatabaseMutation", DatabaseMutation)
+    Vue.component("DatabaseQuery", DatabaseQuery)
+    // Vue.component("UploadCloudFile", UploadCloudFile)
     Vue.prototype.$cloudbase = tcb.init({
       env: options.env
     })

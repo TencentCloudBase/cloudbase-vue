@@ -68,13 +68,10 @@ export default {
 
 ## Components
 
-- [x] [LoginState](#loginstate)
-- [ ] DatabaseQuery
-- [x] [DatabaseWatch](#databasewatch)
-- [ ] DatabaseMutation
-- [ ] CallFunction
-- [x] [CloudFile](#cloudfile)
-- [ ] UploadCloudFile
+- [LoginState](#loginstate)
+- [DatabaseQuery](#databasequery)
+- [DatabaseWatch](#databasewatch)
+- [CloudFile](#cloudfile)
 
 ### LoginState
 获取登录状态
@@ -99,15 +96,51 @@ export default {
 
 -------
 
+
+### DatabaseQuery
+
+数据库查询
+
+#### Props
+
+| prop       | type       | 描述                                             |
+| ---------- | ---------- | ------------------------------------------------ |
+| collection | `string`   | 集合名                                           |
+| query      | `function` | 返回自定的查询条件，如 `_ => ({ foo: _.gt(2) })` |
+
+#### Slot
+
+| slot    | type              | 描述           |
+| ------- | ----------------- | -------------- |
+| docs    | `Array<doc>`      | 文档组成的数组 |
+| loading | `boolean`         | 是否加载中     |
+| error   | `null` or `Error` | 错误           |
+
+#### Example
+```html
+<DatabaseQuery
+  v-slot="{ docs, loading, error }"
+  collection="messages"
+  :query="_ => ({ timestamp: _.gt(1573635456709) })"
+>
+  <p v-for="{ text } in docs">
+    {{ text }}
+  </p>
+</DatabaseQuery>
+```
+
+-------
+
 ### DatabaseWatch
 
 数据库实时监听
 
 #### Props
 
-| slot       | type     | 描述   |
-| ---------- | -------- | ------ |
-| collection | `string` | 集合名 |
+| prop       | type       | 描述                                             |
+| ---------- | ---------- | ------------------------------------------------ |
+| collection | `string`   | 集合名                                           |
+| query      | `function` | 返回自定的查询条件，如 `_ => ({ foo: _.gt(2) })` |
 
 #### Slot
 | slot    | type              | 描述           |
@@ -121,6 +154,7 @@ export default {
 <DatabaseWatch
   v-slot="{ docs, loading, error }"
   collection="messages"
+  :query="_ => ({ timestamp: _.gt(1573635456709) })"
 >
   <p v-for="{ text } in docs">
     {{ text }}

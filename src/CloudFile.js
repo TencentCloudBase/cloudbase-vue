@@ -1,5 +1,8 @@
 export default {
   props: {
+    tag: {
+      type: String
+    },
     id: {
       required: true,
       type: String
@@ -20,10 +23,16 @@ export default {
     this.loading = false
     this.url = result.fileList[0].tempFileURL
   },
-  render() {
-    return this.$scopedSlots.default({
+  render(h) {
+    const tag = this.tag || 'div'
+    let result = this.$scopedSlots.default ? this.$scopedSlots.default({
       url: this.url,
       loading: this.loading
-    });
+    }) : h(tag);
+    if (Array.isArray(result)) {
+      return h(tag, result)
+    } else {
+      return result
+    }
   },
 };

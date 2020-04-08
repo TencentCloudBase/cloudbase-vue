@@ -1,8 +1,14 @@
 export default {
   props: {
+    tag: {
+      type: String
+    },
     collection: {
       required: true,
       type: String
+    },
+    query: {
+      type: Function
     }
   },
   data() {
@@ -13,17 +19,25 @@ export default {
     }
   },
   async created() {
-    this.$cloudbase.database().collection(this.collection).where({}).watch({
+    const db = this.$cloudbase.database()
+    const query = this.query ? this.query(db.command) : {}
+    db.collection(this.collection).where(query).watch({
       onChange: (snapshot) => {
         this.loading = false
         this.docs = snapshot.docs
-      }
+      },
+      onError: () => {}
     })
   },
-  render() {
-    return this.$scopedSlots.default({
+  render(h) {
+    let result = this.$scopedSlots.default({
       docs: this.docs,
       loading: this.loading,
     });
+    if (Array.isArray(result)) {
+      return h(this.tag || 'div', result)
+    } else {
+      return result
+    }
   },
 };

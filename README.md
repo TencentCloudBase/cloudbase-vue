@@ -1,10 +1,10 @@
 # cloudbase-vue
 
-Cloudbase Plugin for Vue
+云开发 Vue 插件
 
 -------
 
-## Install
+## 安装
 
 ```
 npm install --save @cloudbase/vue-provider
@@ -12,13 +12,18 @@ npm install --save @cloudbase/vue-provider
 
 ------
 
-## Usage
+## 使用
+
+下面我们使用 `LoginState` 组件，来动态绑定当前页面的登录态。
+
+- 页面初始化时，显示 `'未登录'`
+- 之后我们调用[匿名登录](https://docs.cloudbase.net/authentication/anonymous.html)，如果登录成功，则文案将变成 `'已登录'`
 
 ```html
 <template>
   <div id="app">
     <LoginState v-slot="{ loginState }">
-      <h1>{{ loginState ? '已登录' : '没登录' }}</h1>
+      <h1>{{ loginState ? '已登录' : '未登录' }}</h1>
     </LoginState>
   </div>
 </template>
@@ -33,13 +38,14 @@ Vue.use(Cloudbase, {
 
 export default {
   async created() {
-    // 以自定义登录为例
-    const ticket = await fetchTicket()
-    this.$cloudbase.auth({ persistence: "local" }).signInWithTicket(ticket)
+    // 以匿名登录为例
+    await this.$cloudbase
+      .auth({ persistence: "local" })
+      .anonymousAuthProvider()
+      .signIn()
   }
 }
 </script>
-
 ```
 --------
 
@@ -68,10 +74,12 @@ export default {
 
 ## Components
 
-- [LoginState](#loginstate)
-- [DatabaseQuery](#databasequery)
-- [DatabaseWatch](#databasewatch)
-- [CloudFile](#cloudfile)
+| 组件 | 功能 |
+| ---- | ---- |
+| [LoginState](#loginstate) | 获取并绑定登录状态 |
+| [DatabaseQuery](#databasequery) | 数据库查询 |
+| [DatabaseWatch](#databasewatch) | 数据库实时推送 |
+| [CloudFile](#cloudfile) | 获取云存储中的文件 |
 
 ### LoginState
 获取登录状态

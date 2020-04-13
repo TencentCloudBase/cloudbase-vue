@@ -1,8 +1,6 @@
-# cloudbase-vue
+# 云开发 Vue 插件
 
-云开发 Vue 插件
-
--------
+[云开发 Vue 插件](https://github.com/TencentCloudBase/cloudbase-vue) 是云开发官方维护的 Vue 插件，提供全局入口、Vue 逻辑组件等功能。
 
 ## 安装
 

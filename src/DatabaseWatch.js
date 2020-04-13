@@ -30,12 +30,13 @@ export default {
     })
   },
   render(h) {
-    let result = this.$scopedSlots.default({
+    const tag = this.tag || 'div'
+    let result = this.$scopedSlots.default ? this.$scopedSlots.default({
       docs: this.docs,
       loading: this.loading,
-    });
+    }) : h(tag);
     if (Array.isArray(result)) {
-      return h(this.tag || 'div', result)
+      return h(tag, result)
     } else {
       return result
     }

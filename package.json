@@ -1,6 +1,6 @@
 {
   "name": "@cloudbase/vue-provider",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "lodash.isequal": "^4.5.0",
-    "tcb-js-sdk": "^1.5.1",
+    "tcb-js-sdk": "^1.9.0",
     "vue": "^2.6.10"
   }
 }

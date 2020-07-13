@@ -4,8 +4,9 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack --watch"
+    "test": "jest",
+    "dev": "webpack --watch",
+    "build": "NODE_ENV=production webpack"
   },
   "repository": {
     "type": "git",

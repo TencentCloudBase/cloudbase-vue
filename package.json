@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "lodash.isequal": "^4.5.0",
-    "tcb-js-sdk": "^1.9.0",
+    "tcb-js-sdk": "^1.10.6",
     "vue": "^2.6.10"
   }
 }

@@ -804,10 +804,10 @@
   resolved "https://registry.yarnpkg.com/@cloudbase/adapter-interface/-/adapter-interface-0.4.1.tgz#92c37e1a844d0964dd686806c70cb00e6ccabae2"
   integrity sha512-DJBhBUMg6pYByaw4II7rawbW8nu+x+faZFIxIkWeTRSxboW/jS3NpBQ7kAbycEJVAB2DO77FsnaHKYAMLnvwzw==
 
-"@cloudbase/database@^0.9.16-beta":
-  version "0.9.16-beta"
-  resolved "https://registry.yarnpkg.com/@cloudbase/database/-/database-0.9.16-beta.tgz#e972b447704df4ff45bdd8a80482a39cd8abaf59"
-  integrity sha512-NDwaRWW/rJC8aF9BkFoK6dBXruHJwSh01NnJeeRHgCaofWuu8uC8mDjEJC6oCtBfJQwX01zizaDnZ4CpjbXVJA==
+"@cloudbase/database@^0.9.17-beta":
+  version "0.9.17-beta"
+  resolved "https://registry.npmjs.org/@cloudbase/database/-/database-0.9.17-beta.tgz#31010405323e1524c66bec1780c84ecad8cbbe43"
+  integrity sha512-iC3gU/6TJ/d0mv7i7xkCHvfOzjDk7GeFk4oa7QIm7XNYjKOddumCLsUYnWVIM7bEA7G7wRmwuwoUbgimv72sbg==
   dependencies:
     bson "^4.0.2"
     lodash.clonedeep "4.5.0"
@@ -1917,10 +1917,10 @@ clone@^2.1.1:
   resolved "https://registry.yarnpkg.com/clone/-/clone-2.1.2.tgz#1b7f4b9f591f1e8f83670401600345a02887435f"
   integrity sha1-G39Ln1kfHo+DZwQBYANFoCiHQ18=
 
-cloudbase-adapter-wx_mp@^0.1.0:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/cloudbase-adapter-wx_mp/-/cloudbase-adapter-wx_mp-0.1.1.tgz#2750ed8145f8216841d25bbb5d6b9b4a214b8438"
-  integrity sha512-ty902JEJNn3Gq7FQtWCfybnNPWJHZDGz5wUE7w6Nq5mALgNvh2VWf4P7tKcJeYmzZGRp9BtZ1rf+24ukJ1Jdig==
+cloudbase-adapter-wx_mp@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.npmjs.org/cloudbase-adapter-wx_mp/-/cloudbase-adapter-wx_mp-0.1.2.tgz#de1b4e58613aa03cf9f5eff0028fe6ce455d3169"
+  integrity sha512-RRWQFeUUtih/wPpA/5sIlqc+nTm8nWei2eMJvEEnZjflr1EzbVCjkzgzzosGCbjgzT5QTU+ql3zSEotepaMmpA==
   dependencies:
     "@cloudbase/adapter-interface" "^0.4.0"
 
@@ -6083,15 +6083,15 @@ tapable@^1.0.0, tapable@^1.1.3:
   resolved "https://registry.yarnpkg.com/tapable/-/tapable-1.1.3.tgz#a1fccc06b58db61fd7a45da2da44f5f3a3e67ba2"
   integrity sha512-4WK/bYZmj8xLr+HUCODHGF1ZFzsYffasLUgEiMBY4fgtltdO6B4WJtlSbPaDTLpYTcGVwM2qLnFTICEcNxs3kA==
 
-tcb-js-sdk@^1.9.0:
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/tcb-js-sdk/-/tcb-js-sdk-1.9.0.tgz#7459931bb43e4d8d1d71e97dd2d404b05d159a13"
-  integrity sha512-Kp8pdov3zfOy8SVmRQSseSkDy+LXS5p9CPqgxwQMYBZWADPuryB7iz21Zq/wAf8LN8JEfhu0DJOP0t/1H7cKlA==
+tcb-js-sdk@^1.10.6:
+  version "1.10.6"
+  resolved "https://registry.npmjs.org/tcb-js-sdk/-/tcb-js-sdk-1.10.6.tgz#63608a13b9cb565fe15ffc61e56d4c2263a9466a"
+  integrity sha512-cSQ1sLUrdoNS9Ja4AQRpWsuLKx02tKJNzLAzCHwwZuZ8ylnT3MRJTfmL4SwvqhNWaKm/WC4LTLDkYECANUMLQA==
   dependencies:
     "@cloudbase/adapter-interface" "^0.4.0"
-    "@cloudbase/database" "^0.9.16-beta"
+    "@cloudbase/database" "^0.9.17-beta"
     axios "^0.19.1"
-    cloudbase-adapter-wx_mp "^0.1.0"
+    cloudbase-adapter-wx_mp "^0.1.2"
     crypto-js "^3.1.9-1"
     fingerprintjs2 "^2.1.0"
     url "^0.11.0"

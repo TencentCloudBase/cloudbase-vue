@@ -1,10 +1,9 @@
-// import Query from "./Query"
+import cloudbase from '@cloudbase/js-sdk'
 import LoginState from './LoginState'
 import DatabaseWatch from './DatabaseWatch'
 import CloudFile from './CloudFile'
 import DatabaseQuery from './DatabaseQuery'
 // import UploadCloudFile from './UploadCloudFile'
-import tcb from 'tcb-js-sdk'
 
 const plugin = {
   install(Vue, options) {
@@ -14,7 +13,7 @@ const plugin = {
     Vue.component("CloudFile", CloudFile)
     Vue.component("DatabaseQuery", DatabaseQuery)
     // Vue.component("UploadCloudFile", UploadCloudFile)
-    Vue.prototype.$cloudbase = tcb.init({
+    Vue.prototype.$cloudbase = cloudbase.init({
       env: options.env
     })
   }

@@ -804,15 +804,90 @@
   resolved "https://registry.yarnpkg.com/@cloudbase/adapter-interface/-/adapter-interface-0.4.1.tgz#92c37e1a844d0964dd686806c70cb00e6ccabae2"
   integrity sha512-DJBhBUMg6pYByaw4II7rawbW8nu+x+faZFIxIkWeTRSxboW/jS3NpBQ7kAbycEJVAB2DO77FsnaHKYAMLnvwzw==
 
-"@cloudbase/database@^0.9.17-beta":
-  version "0.9.17-beta"
-  resolved "https://registry.npmjs.org/@cloudbase/database/-/database-0.9.17-beta.tgz#31010405323e1524c66bec1780c84ecad8cbbe43"
-  integrity sha512-iC3gU/6TJ/d0mv7i7xkCHvfOzjDk7GeFk4oa7QIm7XNYjKOddumCLsUYnWVIM7bEA7G7wRmwuwoUbgimv72sbg==
+"@cloudbase/app@^1.2.3":
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/@cloudbase/app/-/app-1.2.3.tgz#5671be4b2003a5831477cbdcce5dc100712abb0a"
+  integrity sha512-vJO1QTN4DXIz6ZbXxVrqHKukieKYYoMbxe8H2dSSBYT17Xg1JPB06KIYjtxvSGukRdEwfgz09VQyTu9+IhcmiQ==
+  dependencies:
+    "@cloudbase/adapter-interface" "^0.4.0"
+    "@cloudbase/types" "^1.1.1"
+    "@cloudbase/utilities" "^1.2.2"
+    cloudbase-adapter-wx_mp "0.2.0"
+
+"@cloudbase/auth@^1.3.3":
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/@cloudbase/auth/-/auth-1.3.3.tgz#e2ffda25997b02ff499e3afc73be5139ec643294"
+  integrity sha512-R5dCN4fIhX7ljL911eEKe3nwEVovjS6SzECKytjCqwgQLfJULfL3OUKT+x4ZT+L4hZ61wX18h5DfyO3ByjtGxg==
+  dependencies:
+    "@cloudbase/adapter-interface" "^0.4.0"
+    "@cloudbase/app" "^1.2.3"
+    "@cloudbase/types" "^1.1.1"
+    "@cloudbase/utilities" "^1.2.2"
+    sourcemapped-stacktrace "^1.1.11"
+
+"@cloudbase/database@^0.9.18-next":
+  version "0.9.18-next"
+  resolved "https://registry.yarnpkg.com/@cloudbase/database/-/database-0.9.18-next.tgz#3c8919512c891783f3acaad7228da2dfcfd951d7"
+  integrity sha512-iXruD1T5scc/h+zNc7o3EdoiEr5l0eLhMH47UsIprp5livB7tdZTDX9U5EBXflYmRIG/1TrK983GsvCbKWT7iw==
   dependencies:
     bson "^4.0.2"
     lodash.clonedeep "4.5.0"
     lodash.set "4.3.2"
     lodash.unset "4.5.2"
+
+"@cloudbase/functions@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@cloudbase/functions/-/functions-1.2.2.tgz#826c16c64b78e30169ca61abfc6894283772843f"
+  integrity sha512-zlihwOUGnqLaa5YRB6ZMslOsfx7+azAQqQBw0Q0WQVSely0IM4YO2THnDtAPqVBIPr38G7FztPJ6A6ukSV+O0A==
+  dependencies:
+    "@cloudbase/adapter-interface" "^0.4.0"
+    "@cloudbase/types" "^1.1.1"
+    "@cloudbase/utilities" "^1.2.2"
+
+"@cloudbase/js-sdk@^1.3.3":
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/@cloudbase/js-sdk/-/js-sdk-1.3.3.tgz#a9b9f48584d12fff122923a92b532c6664028c46"
+  integrity sha512-05a5RWaiVKCMVoBc1XFVZ3riuRcThkzjwau5oaJhB73C1mwRcB4Svg7Qtj4wLfQxXKPmmbY1SaiC7imWM9FVvA==
+  dependencies:
+    "@cloudbase/app" "^1.2.3"
+    "@cloudbase/auth" "^1.3.3"
+    "@cloudbase/database" "^0.9.18-next"
+    "@cloudbase/functions" "^1.2.2"
+    "@cloudbase/realtime" "^1.1.2"
+    "@cloudbase/storage" "^1.2.2"
+    "@cloudbase/types" "^1.1.1"
+    "@cloudbase/utilities" "^1.2.2"
+
+"@cloudbase/realtime@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@cloudbase/realtime/-/realtime-1.1.2.tgz#b76f0541e3022446e602fee4070b67f0468421e1"
+  integrity sha512-qFZ3vF+N8ozpXLGVo0ARBG+xrWC5sE03qc0aGSvQQp4DCOLOphFyfJKgMWRl+fC9x5MLh4gqIBpdhbAaWttGmQ==
+  dependencies:
+    "@cloudbase/types" "^1.1.1"
+
+"@cloudbase/storage@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@cloudbase/storage/-/storage-1.2.2.tgz#af53fdf6850207165fb91b0a2d385e27b9bd4eae"
+  integrity sha512-HsoLl05t4qykn5dLlDq0RMQECdJQKRB/0fUAMU1ouljNczYhJsmaNsz7bXH50RKb5Y1l8cDzrzku8IFyUTdraw==
+  dependencies:
+    "@cloudbase/types" "^1.1.1"
+    "@cloudbase/utilities" "^1.2.2"
+
+"@cloudbase/types@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@cloudbase/types/-/types-1.1.1.tgz#51895d5a878df46d9ba8ca3bfdabc17e54607006"
+  integrity sha512-Viw62iazQu83y3AvJj+JPNSFodpsuVqfrGFUfR03AA2XL72xc1Tw1f/21vG5L5K9pPqT38MxYuZCXRnhRtCjlQ==
+  dependencies:
+    "@cloudbase/adapter-interface" "^0.4.0"
+
+"@cloudbase/utilities@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@cloudbase/utilities/-/utilities-1.2.2.tgz#0b6eef8c24f7956c453924da8139cda980d2bd90"
+  integrity sha512-mxWG5wW8Gr48sCfm+UzP54t6MwGlJF72q3U5MzInlliJV76nt/LiBsYoieYGvd8Um8OK6MavXfnBf2TIc/F07g==
+  dependencies:
+    "@cloudbase/adapter-interface" "^0.4.0"
+    "@cloudbase/types" "^1.1.1"
+    crypto-js "3"
 
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
@@ -1432,13 +1507,6 @@ aws4@^1.8.0:
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.10.0.tgz#a17b3a8ea811060e74d47d306122400ad4497ae2"
   integrity sha512-3YDiu347mtVtjpyV3u5kVqQLP242c06zwDOgpeRnybmXlYYsLbtTrUBUm8i8srONt+FWobl5aibnU1030PeeuA==
 
-axios@^0.19.1:
-  version "0.19.2"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.19.2.tgz#3ea36c5d8818d0d5f8a8a97a6d36b86cdc00cb27"
-  integrity sha512-fjgm5MvRHLhx+osE2xoekY70AhARk3a6hkN+3Io1jc00jtquGvxYlKlsFUhmUET0V5te6CcZI7lcv2Ym61mjHA==
-  dependencies:
-    follow-redirects "1.5.10"
-
 babel-jest@^24.9.0:
   version "24.9.0"
   resolved "https://registry.yarnpkg.com/babel-jest/-/babel-jest-24.9.0.tgz#3fc327cb8467b89d14d7bc70e315104a783ccd54"
@@ -1504,6 +1572,11 @@ base64-js@^1.0.2:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/base64-js/-/base64-js-1.3.1.tgz#58ece8cb75dd07e71ed08c736abc5fac4dbf8df1"
   integrity sha512-mLQ4i2QO1ytvGWFWmcngKO//JXAQueZvwEKtjgQFM4jIK0kU+ytMfplL8j+n5mspOfjHwoAg+9yhb7BwAHm36g==
+
+base64-js@^1.3.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/base64-js/-/base64-js-1.5.1.tgz#1b1b440160a5bf7ad40b650f095963481903930a"
+  integrity sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==
 
 base@^0.11.1:
   version "0.11.2"
@@ -1694,12 +1767,11 @@ bser@2.1.1:
     node-int64 "^0.4.0"
 
 bson@^4.0.2:
-  version "4.0.4"
-  resolved "https://registry.yarnpkg.com/bson/-/bson-4.0.4.tgz#4bda2cedf2ae7a18d15cb24ee1ede8c797f8eecf"
-  integrity sha512-Ioi3TD0/1V3aI8+hPfC56TetYmzfq2H07jJa9A1lKTxWsFtHtYdLMGMXjtGEg9v0f72NSM07diRQEUNYhLupIA==
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/bson/-/bson-4.2.2.tgz#ac01bb32b8ab30839550b98e0f44fced931df75d"
+  integrity sha512-9fX257PVHAUpiRGmY3356RVWKQxLA73BgjA/x5MGuJkTEMeG7yzjuBrsiFB67EXRJnFVKrbJY9t/M+oElKYktQ==
   dependencies:
-    buffer "^5.1.0"
-    long "^4.0.0"
+    buffer "^5.6.0"
 
 buffer-from@^1.0.0:
   version "1.1.1"
@@ -1720,13 +1792,13 @@ buffer@^4.3.0:
     ieee754 "^1.1.4"
     isarray "^1.0.0"
 
-buffer@^5.1.0:
-  version "5.6.0"
-  resolved "https://registry.yarnpkg.com/buffer/-/buffer-5.6.0.tgz#a31749dc7d81d84db08abf937b6b8c4033f62786"
-  integrity sha512-/gDYp/UtU0eA1ys8bOs9J6a+E/KWIY+DZ+Q2WESNUA0jFRsJOc0SNUO6xJ5SGA1xueg3NL65W6s+NY5l9cunuw==
+buffer@^5.6.0:
+  version "5.7.1"
+  resolved "https://registry.yarnpkg.com/buffer/-/buffer-5.7.1.tgz#ba62e7c13133053582197160851a8f648e99eed0"
+  integrity sha512-EHcyIPBQ4BSGlvjB16k5KgAJ27CIsHY/2JBmCRReo48y9rQ3MaUzWX3KVlBa4U7MyX02HdVj0K7C3WaB3ju7FQ==
   dependencies:
-    base64-js "^1.0.2"
-    ieee754 "^1.1.4"
+    base64-js "^1.3.1"
+    ieee754 "^1.1.13"
 
 builtin-status-codes@^3.0.0:
   version "3.0.0"
@@ -1917,10 +1989,10 @@ clone@^2.1.1:
   resolved "https://registry.yarnpkg.com/clone/-/clone-2.1.2.tgz#1b7f4b9f591f1e8f83670401600345a02887435f"
   integrity sha1-G39Ln1kfHo+DZwQBYANFoCiHQ18=
 
-cloudbase-adapter-wx_mp@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.npmjs.org/cloudbase-adapter-wx_mp/-/cloudbase-adapter-wx_mp-0.1.2.tgz#de1b4e58613aa03cf9f5eff0028fe6ce455d3169"
-  integrity sha512-RRWQFeUUtih/wPpA/5sIlqc+nTm8nWei2eMJvEEnZjflr1EzbVCjkzgzzosGCbjgzT5QTU+ql3zSEotepaMmpA==
+cloudbase-adapter-wx_mp@0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/cloudbase-adapter-wx_mp/-/cloudbase-adapter-wx_mp-0.2.0.tgz#21bd81acec852373ee8b62ab4de57e535eec0059"
+  integrity sha512-GiQGm11cH0K8oKY5tuJZm7DgsM2+WUw5toteMJlKTLMH4ouFrizu5J228I2kXtEWU+u/wE+5tuNGrEdhlfpkZQ==
   dependencies:
     "@cloudbase/adapter-interface" "^0.4.0"
 
@@ -2156,7 +2228,7 @@ crypto-browserify@^3.11.0:
     randombytes "^2.0.0"
     randomfill "^1.0.3"
 
-crypto-js@^3.1.9-1:
+crypto-js@3:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/crypto-js/-/crypto-js-3.3.0.tgz#846dd1cce2f68aacfa156c8578f926a609b7976b"
   integrity sha512-DIT51nX0dCfKltpRiXV+/TVZq+Qq2NgF4644+K7Ttnla7zEzqc+kjJyiB96BHNyUTBxyjzRcZYpUdZa+QAqi6Q==
@@ -2346,13 +2418,6 @@ de-indent@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/de-indent/-/de-indent-1.0.2.tgz#b2038e846dc33baa5796128d0804b455b8c1e21d"
   integrity sha1-sgOOhG3DO6pXlhKNCAS0VbjB4h0=
-
-debug@=3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
-  integrity sha512-OX8XqP7/1a9cqkxYw2yXss15f26NKWBpDXQd0/uK/KPqdQhxbPa994hnzjcE2VqQpDslf55723cKPUOGSmMY3g==
-  dependencies:
-    ms "2.0.0"
 
 debug@^2.2.0, debug@^2.3.3:
   version "2.6.9"
@@ -2855,11 +2920,6 @@ findup-sync@^3.0.0:
     micromatch "^3.0.4"
     resolve-dir "^1.0.1"
 
-fingerprintjs2@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/fingerprintjs2/-/fingerprintjs2-2.1.0.tgz#21dc3fee27d3b199056ef8eb873debccd8e06323"
-  integrity sha512-H1k/ESTD2rJ3liupyqWBPjZC+LKfCGixQzz/NDN4dkgbmG1bVFyMOh7luKSkVDoyfhgvRm62pviNMPI+eJTZcQ==
-
 flush-write-stream@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/flush-write-stream/-/flush-write-stream-1.1.1.tgz#8dd7d873a1babc207d94ead0c2e0e44276ebf2e8"
@@ -2867,13 +2927,6 @@ flush-write-stream@^1.0.0:
   dependencies:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
-
-follow-redirects@1.5.10:
-  version "1.5.10"
-  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.5.10.tgz#7b7a9f9aea2fdff36786a94ff643ed07f4ff5e2a"
-  integrity sha512-0V5l4Cizzvqt5D44aTXbFZz+FtyXV1vrDN6qrelxtfYQKW0KO0W2T/hkE8xvGa/540LkZlkaUjO4ailYTFtHVQ==
-  dependencies:
-    debug "=3.1.0"
 
 for-in@^1.0.2:
   version "1.0.2"
@@ -3217,6 +3270,11 @@ icss-utils@^4.0.0, icss-utils@^4.1.1:
   integrity sha512-4aFq7wvWyMHKgxsH8QQtGpvbASCf+eM3wPRLI6R+MgAnTCZ6STYsRvttLvRWK0Nfif5piF394St3HeJDaljGPA==
   dependencies:
     postcss "^7.0.14"
+
+ieee754@^1.1.13:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/ieee754/-/ieee754-1.2.1.tgz#8eb7a10a63fff25d15a57b001586d177d1b0d352"
+  integrity sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==
 
 ieee754@^1.1.4:
   version "1.1.13"
@@ -4212,11 +4270,6 @@ lodash@^4.17.13, lodash@^4.17.15, lodash@^4.17.5:
   version "4.17.19"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
   integrity sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==
-
-long@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/long/-/long-4.0.0.tgz#9a7b71cfb7d361a194ea555241c92f7468d5bf28"
-  integrity sha512-XsP+KhQif4bjX1kbuSiySJFNAehNxgLb6hPRGJ9QsUr8ajHkuXGdrHmFUTUUXhDwVX2R5bY4JNZEwbUiMhV+MA==
 
 loose-envify@^1.0.0:
   version "1.4.0"
@@ -5835,6 +5888,11 @@ source-map-url@^0.4.0:
   resolved "https://registry.yarnpkg.com/source-map-url/-/source-map-url-0.4.0.tgz#3e935d7ddd73631b97659956d55128e87b5084a3"
   integrity sha1-PpNdfd1zYxuXZZlW1VEo6HtQhKM=
 
+source-map@0.5.6:
+  version "0.5.6"
+  resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.6.tgz#75ce38f52bf0733c5a7f0c118d81334a2bb5f412"
+  integrity sha1-dc449SvwczxafwwRjYEzSiu19BI=
+
 source-map@^0.5.0, source-map@^0.5.6:
   version "0.5.7"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
@@ -5844,6 +5902,13 @@ source-map@^0.6.0, source-map@^0.6.1, source-map@~0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
   integrity sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
+
+sourcemapped-stacktrace@^1.1.11:
+  version "1.1.11"
+  resolved "https://registry.yarnpkg.com/sourcemapped-stacktrace/-/sourcemapped-stacktrace-1.1.11.tgz#e2dede7fc148599c52a4f883276e527f8452657d"
+  integrity sha512-O0pcWjJqzQFVsisPlPXuNawJHHg9N9UgpJ/aDmvi9+vnS3x1C0NhwkVFzzZ1VN0Xo+bekyweoqYvBw5ZBKiNnQ==
+  dependencies:
+    source-map "0.5.6"
 
 spdx-correct@^3.0.0:
   version "3.1.1"
@@ -6082,19 +6147,6 @@ tapable@^1.0.0, tapable@^1.1.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/tapable/-/tapable-1.1.3.tgz#a1fccc06b58db61fd7a45da2da44f5f3a3e67ba2"
   integrity sha512-4WK/bYZmj8xLr+HUCODHGF1ZFzsYffasLUgEiMBY4fgtltdO6B4WJtlSbPaDTLpYTcGVwM2qLnFTICEcNxs3kA==
-
-tcb-js-sdk@^1.10.6:
-  version "1.10.6"
-  resolved "https://registry.npmjs.org/tcb-js-sdk/-/tcb-js-sdk-1.10.6.tgz#63608a13b9cb565fe15ffc61e56d4c2263a9466a"
-  integrity sha512-cSQ1sLUrdoNS9Ja4AQRpWsuLKx02tKJNzLAzCHwwZuZ8ylnT3MRJTfmL4SwvqhNWaKm/WC4LTLDkYECANUMLQA==
-  dependencies:
-    "@cloudbase/adapter-interface" "^0.4.0"
-    "@cloudbase/database" "^0.9.17-beta"
-    axios "^0.19.1"
-    cloudbase-adapter-wx_mp "^0.1.2"
-    crypto-js "^3.1.9-1"
-    fingerprintjs2 "^2.1.0"
-    url "^0.11.0"
 
 terser-webpack-plugin@^1.4.3:
   version "1.4.4"

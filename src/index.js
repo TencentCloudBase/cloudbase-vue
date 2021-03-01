@@ -14,7 +14,8 @@ const plugin = {
     Vue.component("DatabaseQuery", DatabaseQuery)
     // Vue.component("UploadCloudFile", UploadCloudFile)
     Vue.prototype.$cloudbase = cloudbase.init({
-      env: options.env
+      env: options.env,
+      region: options.region
     })
   }
 }

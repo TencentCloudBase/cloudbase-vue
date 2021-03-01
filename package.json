@@ -1,12 +1,13 @@
 {
   "name": "@cloudbase/vue-provider",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
     "test": "jest",
     "dev": "webpack --watch",
-    "build": "NODE_ENV=production webpack"
+    "build": "NODE_ENV=production webpack",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
